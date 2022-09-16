@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 1;
+  }
+  /* inizio form  */
+  body {
+    width: 100%;
+    height: 130vh;
+    color: #f0f0f0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    .container {
+      padding: 50px;
+      width: 60%;
+      height: fit-content;
+      border-radius: 15px;
+      background-color: rgba(68, 93, 114, 0.15);
+      box-shadow: 0px 0px 7px rgb(119, 181, 235);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.9, 0.9);
+    }
+  }
+  .header-titles {
+    .svg-wrapper {
+      svg {
+        fill: white;
+        contain: content;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        min-height: 100%;
+        transform: scale(0.8, 0.8) translateY(25px);
+      }
+      height: 100%;
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: 1;
+    .ttl {
+      color: whitesmoke;
+      font-size: 2.5rem;
+      transform: scale(0.8, 0.8) translateY(25px);
+    }
+  }
+  .header {
+    background-color: aquamarine;
+    padding: 5px 0;
+    h2 {
+      color: #222;
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+  .form {
+    .btn {
+      border-radius: 7px;
+      outline: none;
+      color: #fff;
+      display: block;
+      font-size: 16px;
+      padding: 15px 0;
+      margin-top: 20px;
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      width: 90%;
+      background-color: rgb(67, 132, 64);
+      border: 0.5px solid rgb(3, 68, 3);
+      transition: 0.4s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(30, 127, 127);
+        transform: scale(1.2, 1.2) rotate(-3deg);
+      }
+    }
+    padding: 60px;
+    width: 50%;
+    height: auto;
+    border: 1px solid rgb(32, 37, 44);
+    background-color: rgb(23, 27, 33);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-30px);
+  }
+  .form-control {
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: -30px;
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input,
+    .userData {
+      width: 100%;
+      display: block;
+      font-size: 14px;
+      background: rgb(14, 17, 22);
+      border-radius: 3px;
+      padding: 5px;
+      color: #f0f0f0;
+      margin-bottom: 8px;
+      &:focus {
+        outline: 0;
+        border: #777 1px solid;
+      }
+    }
+    i {
+      position: absolute;
+      right: 3%;
+      top: 31px;
+      visibility: hidden;
+    }
+    small {
+      visibility: hidden;
+      color: #e74c3c;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .inputdiv  {
+    width: 105%;
+    margin-top: 3px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: -16px;
+
+      .go-to-registration {
+        color: rgb(138, 180, 248);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+
+  
+
+  small {
+    transform: translateY(22px);
+    margin-bottom: 5px;
+  }
+  .form-control.success {
+    input {
+      border-color: #2ecc71;
+    }
+    i.fa-circle-check {
+      color: #2ecc71;
+      visibility: visible;
+    }
+  }
+  .form-control.error {
+    input {
+      border-color: #e74c3c;
+    }
+    i.fa-circle-exclamation {
+      color: #e74c3c;
+      visibility: visible;
+    }
+    small {
+      visibility: visible;
+    }
+  }
+  #pos {
+    transform: translate(26px, 6px);
+  }
+  .fa-eye-slash {
+    visibility: hidden;
+  }
+  .eyeopen {
+    visibility: visible;
+  }
+  .eyeclose {
+    display: none;
+  }
+  @media (max-width: 992px) {
+    body {
+      .container {
+        width: 500px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    body  .container {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body .container {
+      width: 90vh;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    body .form {
+      width: 350px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    body .form {
+      width: 80%;
+    }
+  }
+  @media (max-width: 480px) {
+    body .form {
+      width: 120%;
+    }
+  }

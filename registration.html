@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrazione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./stili/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- HEADER / TITLES -->
+        <div class="header-titles">
+            <div class="svg-wrapper">
+                <svg class="titles-svg" aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                    </path>
+                </svg>
+            </div>
+
+
+            <div class="ttl">Sign in to GitHub</div>
+        </div>
+
+        <form action="" class="form" id="form">
+
+            <div class="form-control">
+                <label for="username">Nome</label>
+                <input type="text" name="" id="username" placeholder="Inserire il nome" autocomplete="off">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error Msg</small>
+            </div>
+
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" name="" id="email" placeholder="Inserire email" autocomplete="off">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error Msg</small>
+            </div>
+
+
+            <div class="form-control">
+                <label for="number">Etá</label>
+                <input type="number" name="" id="number" placeholder="Inserire l'etá" autocomplete="off">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error Msg</small>
+            </div>
+
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="" id="password" placeholder="crea password" autocomplete="off">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error Msg</small>
+            </div>
+
+            <h2 id="result"></h2>
+            <div class="form-control">
+                <label for="cpassword">Conferma Password</label>
+                <input type="password" name="" id="cpassword" placeholder="conferma password" autocomplete="off">
+                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span class="fa-solid fa-eye" id="eyeopen" onclick="Hide()"> </span>
+                <span class="fa-solid fa-eye-slash" id="eyeclose" onclick="Show()"></span>
+                <small>Error Msg</small>
+            </div>
+            <div class="inputdiv">
+                <button type="submit" class="btn">Sign up for GitHub </button>
+            </div>
+        </form>
+
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./script/validation-data/validation-register.js"></script>
+
+    <script src="./script/utilities/gestione-user.js"></script>
+    <script>
+        openEye = document.getElementById('eyeopen');
+        closedEye = document.getElementById('eyeclose');
+
+        function Hide() {
+
+            closedEye.classList.add('eyeopen');
+            openEye.classList.add('eyeclose');
+
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            const type2 = cpassword.getAttribute("type") === "password" ? "text" : "password";
+            cpassword.setAttribute("type", type);
+
+        }
+
+        function Show() {
+
+            openEye.classList.remove('eyeclose');
+            closedEye.classList.remove('eyeopen');
+
+
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            const type2 = cpassword.getAttribute("type") === "password" ? "text" : "password";
+            cpassword.setAttribute("type", type);
+        }
+
+        /* ------------------ */
+
+        const form      = document.getElementById("form")     ;
+        const username  = document.getElementById("username") ;
+        const email     = document.getElementById("email")    ;
+        const number    = document.getElementById("number")   ;
+        const password  = document.getElementById("password") ;
+        const cpassword = document.getElementById("cpassword");
+
+        // save in localStorage Name
+
+        /* Even if you reload, you will not lose the data */
+
+        if (localStorage.length > 0) {
+        username.value= localStorage.getItem('username')
+        }
+        username.onkeyup = () => { 
+        localStorage.setItem('username', username.value)
+        }
+        
+        // save in localStorage  email
+        if (localStorage.length > 0) {
+        email.value= localStorage.getItem('email')
+        }
+
+        email.onkeyup = () => { 
+        localStorage.setItem('email', email.value)
+        }
+
+        // save in localStorage Age  
+
+        if (localStorage.length > 0) {
+        number.value = localStorage.getItem('number')
+        }
+        number.onkeyup = () => {
+        localStorage.setItem('number', number.value)
+        }
+
+        // add event
+
+        form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if(validate()){
+            register()
+        }
+        });
+
+    </script>
+
+</body>
+
+</html>
